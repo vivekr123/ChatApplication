@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+
+  </head>
+  <body>
+
+    {{#if success_msg}}                     <!-- global vars in app.js  -->
+      <div>{{success_msg}}</div>
+    {{/if}}
+
+    {{#if error_msg}}
+      <div>{{error_msg}}</div>
+    {{/if}}
+
+    {{#if error}}
+      <div>{{error}}</div>
+    {{/if}}
+
+    {{{body}}}
+  </body>
+
+</html>

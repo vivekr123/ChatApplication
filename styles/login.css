@@ -1,0 +1,33 @@
+html,body {
+  background-image: url("bg1.jpg");
+  text-align: center;
+
+}
+
+button {
+  margin-top:3em;
+  width:10%;
+  height:3em;
+  height:auto;
+  margin-top:3em;
+  padding:.6em;
+  border-radius:.3em;
+  border-style:none;
+  background-color:"#00FFFF";
+}
+
+input{
+  width:15%;
+  height:5%;
+  margin-top:3em;
+  text-align: center; //centers content in input
+  background-color: rgba(4, 167, 148, 0.5);
+  border:none;
+  border-radius:.5em;
+}
+
+#logo{
+  border-style:groove;
+  box-shadow: 8px 8px 15px black;
+  border-radius:5px;
+}

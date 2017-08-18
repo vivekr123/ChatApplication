@@ -1,0 +1,40 @@
+<html>
+
+  <head>
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+    <title>Register</title>
+  </head>
+
+  <body>
+
+    <img src="/css/greytHR.png" id="logo">
+
+
+
+{{#if errors}}
+  {{#each errors}}
+    <center><div class="error-message">{{msg}}</div></center>         <!-- msg is the error message  -->
+  {{/each}}
+{{/if}}
+
+
+
+    <form method="post" action="/users/register">
+
+      <input type="text" placeholder="Name" autocomplete="off" name="name"></input>
+      <br>
+      <input type="email" placeholder="Email" autocomplete="off" name="email"></input>
+      <br>
+      <input type="text" placeholder="Username" autocomplete="off" name="username"></input>
+      <br>
+      <input type="password" placeholder="Password" autocomplete="off" name="password"></input> <!--type password makes password dots appear-->
+      <br>
+      <input type="password" placeholder="Confirm Password" autocomplete="off" name="password2"></input> <!--type password makes password dots appear-->
+      <br>
+      <button type="submit">Register</button>
+
+    </form>
+
+  </body>
+
+</html>

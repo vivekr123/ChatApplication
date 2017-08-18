@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <title>Web chat</title>
+
+  <!-- Placing before makes jquery accessible to other js files -->
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src = '/js/chat.js'></script>
+  <script src = "/socket.io/socket.io.js"></script>
+  <script src = '/js/chatFormat.js'></script>
+
+  <!-- Causes the page to 'refresh' when ui interacted with -->
+  <!--<link rel="stylesheet" type="text/css" href="/css/main.css">-->
+
+  <style>
+  @media only screen and (max-width : 540px){
+    .chat-sidebar{
+      display: none !important;
+    }
+    .chat-popup {
+      display: none !important;
+    }
+  }
+
+  body {
+    background-color: #e9eaed;
+  }
+  .chat-sidebar {
+    width: 200px;
+    position: fixed;
+    height: 100%;
+    right: 0px;
+    top: 0px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border: 1px solid rgba(29,49,91,.3);
+  }
+  .sidebar-name span {
+    padding-left: 5px;
+  }
+  .sidebar-name a {
+    display: block;
+    height: 100%;
+    text-decoration: none;
+    color:inherit;
+  }
+  .sidebar-name:hover {
+    background-color: #e1e2e5;
+  }
+  .sidebar-name img {
+    width: 32px;
+    height: 32px;
+    vertical-align:middle;
+  }
+  .popup-box {
+    display: none;
+    position: fixed;
+    bottom: 0px;
+    right: 220px;
+    height: 285px;
+    background-color: rgb(237, 239, 244);
+    width: 300px;
+    border: 1px solid rgba(29, 49, 91, .3);
+    overflow: hidden;
+  }
+  .popup-box .popup-head {
+    background-color: #57BC90;
+    height:10%;
+    font-size: 1.1em;
+  }
+  .popup-box .popup-head .popup-head-left {
+    float:left;
+    font-weight: bold;
+  }
+  .popup-box .popup-head .popup-head-right {
+    float:right;
+    opacity: 0.5;
+  }
+  .popup-box .popup-head .popup-head-right a {
+    text-decoration: none;
+    color:inherit;
+  }
+
+  .popup-box .popup-messages {
+    height: 80%;
+    width:  100%;
+    overflow-y: scroll;
+    scrollbar-face-color:black;
+  }
+  .popup-box .popup-bottom {
+    padding: 0px;
+    margin-right: 0px;
+    margin-left: 0px;
+    margin-bottom: 1em;
+    height: 100%;
+    width: 90%;
+
+  }
+
+  .features {
+    width:300px;
+    height:10%;
+  }
+
+  .features .popup-bottom {
+    width: 90%;
+    margin-bottom:1%;
+    float:left;
+    display:inline-block;
+  }
+
+  .features .attachment {
+    width:8.6%;
+    height:100%;
+    float:right;
+    display:inline-block;
+  }
+
+  .features .attachment #files {
+    width:10%;
+    height:100%;
+    float:right;
+    display:inline-block;
+  }
+
+  .features .attachment button {
+    height:100%;
+    width:100%;
+  }
+
+  .features .attachment label {
+    height:100%;
+    width:100%;
+  }
+
+  .features .attachment label img {
+    padding:0;
+    margin:0;
+    height:100%;
+    width:100%;
+  }
+
+  </style>
+
+
+  </head>
+  <body>
+    <div class = 'chat-sidebar' id = 'chat-sidebar'>
+
+      <div class = 'sidebar-name'>
+        <!-- (Permanent Chabot to be placed here if wanted)   -->
+      </div>
+    </div>
+
+      <div id="content" style="width: 50%;height: 300px; margin: 0 0 20px 0; border: solid 1px #999; overflow-y: scroll; display: none;"  data-myValue={{username}}></div>
+
+
+      <div class="searchBoxes">
+        <h2>Search messages<br>
+
+      <form method='post' action='/users/search' id='search'>
+        <input placeholder="User Name" type='search' id='userSearch' name='userQuery'>
+        <input placeholder="Message" type='search' id='messageSearch' name='msgQuery'>
+
+      </form>
+
+      </div>
+      <div id="searchResults">
+
+      </div>
+
+
+
+    </body>
+
+
+
+
+
+
+</html>

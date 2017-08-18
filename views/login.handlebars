@@ -1,0 +1,32 @@
+<html>
+
+  <head>
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+    <title>Login</title>
+  </head>
+
+  <body>
+
+<div>
+
+    <img src="/css/greytHR.png" id="logo">
+
+    <form method='post' action='/users/login'>
+
+
+          <div class="" style="">{{message}}</div>         <!-- msg is the error message  -->
+
+      <input type="text" placeholder="Username" autocomplete="off" name="username"></input>
+      <br>
+      <input type="password" placeholder="Password" autocomplete="off" name="password"></input> <!--type password makes password dots appear-->
+      <br>
+      <button>Login</button>
+
+
+    </form>
+
+</div>
+
+  </body>
+
+</html>
