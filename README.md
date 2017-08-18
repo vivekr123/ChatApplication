@@ -1,1 +1,1 @@
-# ACDCSignIn
+API for establishing real-time chat between authenticated online users using Node.js, MongoDB, and Elasticsearch. Functionality includes sending messages, searching for messages(user-specific). attaching files, and link compatibility.
